@@ -24,7 +24,7 @@ interface CoreprgCards {
 }
 
 function CorePrg(props: CoreprgCards) {
-  const { title, content, imageUrl, imageAlt } = props;
+  const {key, title, content, imageUrl, imageAlt } = props;
   return (
     <>
       <Card maxW="1000" maxH="1000" _hover={{ bg: "#FF6A3D" }}>
@@ -105,6 +105,7 @@ export default function Npa() {
             {CardsData.map((e) => (
               <Link as = {NextLink} key = {e.key}href={e.url}>
                 <CorePrg
+                key = {e.key}
                   imageUrl={e.imagePath}
                   imageAlt={e.imageAlt}
                   title={e.title}
